@@ -22,9 +22,6 @@ public class RegisterPage {
     private By email = By.id("Email");
     private By password = By.id("Password");
     private By confirmPassword = By.id("ConfirmPassword");
-    private By dayDropdown = By.name("DateOfBirthDay");
-    private By monthDropdown = By.name("DateOfBirthMonth");
-    private By yearDropdown = By.name("DateOfBirthYear");
     private By registerButton = By.id("register-button");
     private By resultMessage = By.cssSelector("div.result");
 
@@ -39,21 +36,11 @@ public class RegisterPage {
     public void enterPassword(String p) { driver.findElement(password).sendKeys(p); }
     public void enterConfirmPassword(String p) { driver.findElement(confirmPassword).sendKeys(p); }
 
-    public void selectDOB(String d, String m, String y) {
-    	
-    	wait.waitForVisibility(dayDropdown);
-        wait.waitForVisibility(monthDropdown);
-        wait.waitForVisibility(yearDropdown);
-    	
-        new Select(driver.findElement(dayDropdown)).selectByVisibleText(d);
-        new Select(driver.findElement(monthDropdown)).selectByVisibleText(m);
-        new Select(driver.findElement(yearDropdown)).selectByVisibleText(y);
-    }
-
     public void clickRegister() { driver.findElement(registerButton).click(); }
 
     public String getResultMessage() {
         return wait.waitForVisibility(resultMessage).getText();
     }
 }
+
 
