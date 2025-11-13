@@ -26,7 +26,6 @@ public class UiTests extends BaseTest {
         reg.selectGenderMale();
         reg.enterFirstName(sanket);
         reg.enterLastName(kumar);
-        reg.selectDOB(day, month, year);
         reg.enterEmail(email);
         reg.enterPassword(passwords);
         reg.enterConfirmPassword(passwords);
@@ -82,4 +81,5 @@ public class UiTests extends BaseTest {
         Assert.assertTrue(checkout.confirmOrder(), "Order must be successfully processed");
     }
 }
+
 
