@@ -20,7 +20,7 @@ public class UiTests extends BaseTest {
     }
 
     @Test(dataProvider = "users", groups = {"UI"})
-    public void registrationFlow(String sanket, String kumar, String email, String passwords, String day, String month, String year) {
+    public void registrationFlow(String sanket, String kumar, String email, String passwords) {
         RegisterPage reg = new RegisterPage(driver);
         reg.open();
         reg.selectGenderMale();
@@ -81,5 +81,6 @@ public class UiTests extends BaseTest {
         Assert.assertTrue(checkout.confirmOrder(), "Order must be successfully processed");
     }
 }
+
 
 
